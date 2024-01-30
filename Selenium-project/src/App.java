@@ -27,42 +27,54 @@ public class App {
         // Enter a number into the input field
      
         // WebElement buttonElement = driver.findElement(By.xpath("//button[text()='Display Value']"));
-        WebElement buttonElement = driver.findElement(By.id("two"));
+        WebElement buttonElement = driver.findElement(By.id("2"));
     
 
         buttonElement.click();
         try {
-            Thread.sleep(2000);
+            Thread.sleep(600);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        WebElement buttonElement1 = driver.findElement(By.id("mul"));
+        WebElement buttonElement1 = driver.findElement(By.id("*"));
       
 
         buttonElement1.click();
         try {
-            Thread.sleep(2000);
+            Thread.sleep(600);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        WebElement buttonElement2 = driver.findElement(By.id("three"));
+        WebElement buttonElement2 = driver.findElement(By.id("3"));
       
 
         buttonElement2.click();
         try {
-            Thread.sleep(2000);
+            Thread.sleep(600);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
-        WebElement buttonElement4 = driver.findElement(By.id("equal"));
+        WebElement buttonElement4 = driver.findElement(By.id("="));
       
 
         buttonElement4.click();
-        try {
-            Thread.sleep(200000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+       
+
+        int a ;
+        a = 5 ;
+        while(a>0){
+            a-- ;
+            WebElement buttonElement5 = driver.findElement(By.id("btn"));
+      
+
+            buttonElement5.click();
+            try {
+                Thread.sleep(600);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
         }
         // try {
         //     Thread.sleep(2000000);
