@@ -6,53 +6,283 @@
     <title>Simple Calculator</title>
     <style>
         body {
+           
             font-family: 'Arial', sans-serif;
             text-align: center;
             margin: 50px;
+            transition: background-color 0.3s; 
         }
 
         input, button {
+            border-radius: 6px;
             font-size: 18px;
             padding: 10px;
             margin: 5px;
+           
+            transition: background-color 0.3s; 
         }
 
         #calculator {
             width: 300px;
             margin: 0 auto;
         }
+        .top-right-button {
+            position: absolute;
+            height: 40px;
+            width: 90px; 
+            top: 10px;
+            right: 10px;
+            padding: 10px;
+            background-color: #111;
+            color: #fff;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+     
     </style>
 </head>
 <body>
 
-    <h1>Simple Calculator</h1>
+    <h1 id="head">Simple Calculator</h1>
 
-    <div id="calculator">
+    <div class = "cal" id="calculator">
         <input type="text" id="display" disabled>
         <br>
-        <button onclick="clearDisplay()">C</button>
-        <button onclick="appendToDisplay('/')">/</button>
-        <button id="mul" onclick="appendToDisplay('*')">*</button>
-        <button onclick="appendToDisplay('7')">7</button>
-        <button onclick="appendToDisplay('8')">8</button>
-        <button onclick="appendToDisplay('9')">9</button>
-        <button onclick="appendToDisplay('-')">-</button>
-        <button onclick="appendToDisplay('4')">4</button>
-        <button onclick="appendToDisplay('5')">5</button>
-        <button onclick="appendToDisplay('6')">6</button>
-        <button onclick="appendToDisplay('+')">+</button>
-        <button onclick="appendToDisplay('1')">1</button>
-        <button id = "two" onclick="appendToDisplay('2')">2</button>
-        <button id = "three"onclick="appendToDisplay('3')">3</button>
-        <button id = "equal" onclick="calculateResult()">=</button>
-        <button onclick="appendToDisplay('0')">0</button>
-        <button onclick="appendToDisplay('.')">.</button>
+        <button id = "C"onclick="clearDisplay()">C</button>
+        <button id = "/"onclick="appendToDisplay('/')">/</button>
+        <button id="*" onclick="appendToDisplay('*')">*</button>
+        <button id = "7"onclick="appendToDisplay('7')">7</button>
+        <button id = "8" onclick="appendToDisplay('8')">8</button>
+        <button id = "9" onclick="appendToDisplay('9')">9</button>
+        <button id = "-"onclick="appendToDisplay('-')">-</button>
+        <button id = "4"onclick="appendToDisplay('4')">4</button>
+        <button id = "5"onclick="appendToDisplay('5')">5</button>
+        <button id = "6"onclick="appendToDisplay('6')">6</button>
+        <button id = "+"onclick="appendToDisplay('+')">+</button>
+        <button id = "1"onclick="appendToDisplay('1')">1</button>
+        <button id = "2" onclick="appendToDisplay('2')">2</button>
+        <button id = "3"onclick="appendToDisplay('3')">3</button>
+        <button id = "=" onclick="calculateResult()">=</button>
+        <button id = "0" onclick="appendToDisplay('0')">0</button>
+        <button id = "."onclick="appendToDisplay('.')">.</button>
+        <button id ="btn"class="top-right-button"onclick = "changeColor()">tap</button>
     </div>
+    
 
     <script>
         // JavaScript code
+        var cnt = 0 ;
+        function countClicks() {
+            return cnt++;
+
+        }
         function appendToDisplay(value) {
             document.getElementById('display').value += value;
+        }
+        function changeColor() {
+            var x = countClicks() ;
+            var button = document.getElementById("btn");
+            var h = document.getElementById("head") ;
+            var body = document.body ;
+           var int = document.getElementById("display")
+
+            
+            if(x %2 == 0){
+          int.style.color = "black"
+            h.style.color = "black"
+            body.style.backgroundColor = "#fff"
+            button.style.backgroundColor = "#111" ; // Change to your desired color
+            button.style.color = "#fff" ;
+            button.style.borderBlockColor = "#111"
+
+            var button1 = document.getElementById("1");
+
+            button1.style.backgroundColor = "#fff" ; // Change to your desired color
+            button1.style.color = "#111" ;
+            button1.style.borderBlockColor = "#111"
+
+            var button2 = document.getElementById("2");
+
+            button2.style.backgroundColor = "#fff" ; // Change to your desired color
+            button2.style.color = "#111" ;
+            button2.style.borderBlockColor = "#111"
+            var button3 = document.getElementById("3");
+
+            button3.style.backgroundColor = "#fff" ; // Change to your desired color
+            button3.style.color = "#111" ;
+            button3.style.borderBlockColor = "#111"
+            var button4 = document.getElementById("4");
+
+            button4.style.backgroundColor = "#fff" ; // Change to your desired color
+            button4.style.color = "#111" ;
+            button4.style.borderBlockColor = "#111"
+            var button5 = document.getElementById("5");
+
+            button5.style.backgroundColor = "#fff" ; // Change to your desired color
+            button5.style.color = "#111" ;
+            button5.style.borderBlockColor = "#111"
+            var button6 = document.getElementById("6");
+
+            button6.style.backgroundColor = "#fff" ; // Change to your desired color
+            button6.style.color = "#111" ;
+            button6.style.borderBlockColor = "#111"
+            var button7 = document.getElementById("7");
+
+            button7.style.backgroundColor = "#fff" ; // Change to your desired color
+            button7.style.color = "#111" ;
+            button7.style.borderBlockColor = "#111"
+            var button8 = document.getElementById("8");
+
+            button8.style.backgroundColor = "#fff" ; // Change to your desired color
+            button8.style.color = "#111" ;
+            button8.style.borderBlockColor = "#111"
+            var button9 = document.getElementById("9");
+
+            button9.style.backgroundColor = "#fff" ; // Change to your desired color
+            button9.style.color = "#111" ;
+            button9.style.borderBlockColor = "#111"
+            var button0 = document.getElementById("0");
+
+            button0.style.backgroundColor = "#fff" ; // Change to your desired color
+            button0.style.color = "#111" ;
+            button0.style.borderBlockColor = "#111"
+            var buttonmul = document.getElementById("*");
+
+            buttonmul.style.backgroundColor = "#fff" ; // Change to your desired color
+            buttonmul.style.color = "#111" ;
+            buttonmul.style.borderBlockColor = "#111"
+            var buttonadd = document.getElementById("+");
+
+            buttonadd.style.backgroundColor = "#fff" ; // Change to your desired color
+            buttonadd.style.color = "#111" ;
+            buttonadd.style.borderBlockColor = "#111"
+            var buttonmin = document.getElementById("-");
+            button.style.borderBlockColor = "#111"    
+            buttonmin.style.backgroundColor = "#fff" ; // Change to your desired color
+            buttonmin.style.color = "#111" ;
+            var buttondiv = document.getElementById("/");
+
+            buttondiv.style.backgroundColor = "#fff" ; // Change to your desired color
+            buttondiv.style.color = "#111" ;
+            buttondiv.style.borderBlockColor = "#111"
+            var buttoneq = document.getElementById("=");
+
+            buttoneq.style.backgroundColor = "#fff" ; // Change to your desired color
+            buttoneq.style.color = "#111" ;
+            buttoneq.style.borderBlockColor = "#111"
+             
+             var buttonC = document.getElementById("C");
+
+            buttonC.style.backgroundColor = "#fff" ; // Change to your desired color
+            buttonC.style.color = "#111" ;
+            buttonC.style.borderBlockColor = "#111"
+
+            var buttonD = document.getElementById(".");
+
+buttonD.style.backgroundColor = "#fff" ; // Change to your desired color
+buttonD.style.color = "#111" ;
+buttonD.style.borderBlockColor = "#111"
+
+        
+        }
+            else {
+              
+                int.style.color = "white" 
+                h.style.color = "#fff"
+
+                button.style.backgroundColor = "#fff" ; // Change to your desired color
+                body.style.background = "#111"
+            button.style.color = "#111" ; 
+            button.style.borderBlockColor = "#fff"
+            var button1 = document.getElementById("1");
+
+            button1.style.backgroundColor = "#111" ; // Change to your desired color
+            button1.style.color = "#fff" ;
+            button1.style.borderBlockColor = "#fff"
+
+            var button2 = document.getElementById("2");
+
+            button2.style.backgroundColor = "#111" ; // Change to your desired color
+            button2.style.color = "#fff" ;
+            button2.style.borderBlockColor = "#fff"
+            var button3 = document.getElementById("3");
+
+            button3.style.backgroundColor = "#111" ; // Change to your desired color
+            button3.style.color = "#fff" ;
+            button3.style.borderBlockColor = "#fff"
+            var button4 = document.getElementById("4");
+
+            button4.style.backgroundColor = "#111" ; // Change to your desired color
+            button4.style.color = "#fff" ;
+            button4.style.borderBlockColor = "#fff"
+            var button5 = document.getElementById("5");
+
+            button5.style.backgroundColor = "#111" ; // Change to your desired color
+            button5.style.color = "#fff" ;
+            button5.style.borderBlockColor = "#fff"
+            var button6 = document.getElementById("6");
+
+            button6.style.backgroundColor = "#111" ; // Change to your desired color
+            button6.style.color = "#fff" ;
+            button6.style.borderBlockColor = "#fff"
+            var button7 = document.getElementById("7");
+
+            button7.style.backgroundColor = "#111" ; // Change to your desired color
+            button7.style.color = "#fff" ;
+            button7.style.borderBlockColor = "#fff"
+            var button8 = document.getElementById("8");
+
+            button8.style.backgroundColor = "#111" ; // Change to your desired color
+            button8.style.color = "#fff" ;
+            button8.style.borderBlockColor = "#fff"
+            var button9 = document.getElementById("9");
+
+            button9.style.backgroundColor = "#111" ; // Change to your desired color
+            button9.style.color = "#fff" ;
+            button9.style.borderBlockColor = "#fff"
+            var button0 = document.getElementById("0");
+
+            button0.style.backgroundColor = "#111" ; // Change to your desired color
+            button0.style.color = "#fff" ;
+            button0.style.borderBlockColor = "#fff"
+            var buttonmul = document.getElementById("*");
+
+            buttonmul.style.backgroundColor = "#111" ; // Change to your desired color
+            buttonmul.style.color = "#fff" ;
+            buttonmul.style.borderBlockColor = "#fff"
+            var buttonadd = document.getElementById("+");
+
+            buttonadd.style.backgroundColor = "#111" ; // Change to your desired color
+            buttonadd.style.color = "#fff" ;
+            buttonadd.style.borderBlockColor = "#fff"
+            var buttonmin = document.getElementById("-");
+            buttonmin.style.borderBlockColor = "#fff"    
+            buttonmin.style.backgroundColor = "#111" ; // Change to your desired color
+            buttonmin.style.color = "#fff" ;
+            var buttondiv = document.getElementById("/");
+
+            buttondiv.style.backgroundColor = "#111" ; // Change to your desired color
+            buttondiv.style.color = "#fff" ;
+            buttondiv.style.borderBlockColor = "#fff"
+            var buttoneq = document.getElementById("=");
+
+            buttoneq.style.backgroundColor = "#111" ; // Change to your desired color
+            buttoneq.style.color = "#fff" ;
+            buttoneq.style.borderBlockColor = "#fff"
+             
+             var buttonC = document.getElementById("C");
+
+            buttonC.style.backgroundColor = "#111" ; // Change to your desired color
+            buttonC.style.color = "#fff" ;
+            buttonC.style.borderBlockColor = "#fff"
+
+            var buttonD = document.getElementById(".");
+
+buttonD.style.backgroundColor = "#111" ; // Change to your desired color
+buttonD.style.color = "#fff" ;
+buttonD.style.borderBlockColor = "#fff"
+            }
         }
 
         function clearDisplay() {
